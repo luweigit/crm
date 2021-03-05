@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+<!--    &lt;!&ndash;数据库配置信息&ndash;&gt;
+    <context:property-placeholder location="classpath:mybatis/db.properties"/>-->
+    <!--配置数据库信息-->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+
+    <!--配置SqlSessionFactory-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+
+        <!--Mybatis:扫描包,给定实体类别名,默认是类名首字母小写-->
+        <property name="typeAliasesPackage" value="crm.wei.lu.settings.pojo" />
+
+        <!--批量扫描映射文件-->
+        <property name="mapperLocations" value="classpath:mappers/*.xml" />
+
+        <!--导入SqlMapConfig.xml-->
+        <property name="configLocation" value="classpath:mybatis/SqlMapConfig.xml" />
+
+        <!--分页插件:PageHelper-->
+        <property name="plugins">
+            <array>
+                <bean class="com.github.pagehelper.PageHelper">
+                    <property name="properties">
+                        <props>
+                            <!--dialect:数据库方言-->
+                            <prop key="dialect">mysql</prop>
+                            <prop key="supportMethodsArguments">true</prop>
+                        </props>
+                    </property>
+                </bean>
+            </array>
+        </property>
+    </bean>
+
+
+    <!--
+        扫描mapper接口:目的就是为了给mapper接口生成子类
+        org.mybatis.spring.mapper.MapperScannerConfigurer:传统方式开发
+        tk.mybatis.spring.mapper.MapperScannerConfigurer:传统和通用mapper
+    -->
+    <bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="crm.wei.lu.settings.mapper"/>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+    </bean>
+</beans>
