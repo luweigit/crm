@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>wei.lu</groupId>
-  <artifactId>crm</artifactId>
+  <artifactId>wei.lu.crm</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
 
@@ -150,7 +150,7 @@
   </dependencies>
 
   <build>
-    <finalName>crm</finalName>
+    <finalName>wei.lu.crm</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <!-- tomcat插件 -->
@@ -160,7 +160,7 @@
           <version>2.2</version>
           <configuration>
             <port>8080</port>
-            <path>/crm</path>
+            <path>/wei.lu.crm</path>
             <uriEncoding>UTF-8</uriEncoding>
           </configuration>
         </plugin>

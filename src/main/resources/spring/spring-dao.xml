@@ -17,7 +17,7 @@
         <property name="dataSource" ref="dataSource" />
 
         <!--Mybatis:扫描包,给定实体类别名,默认是类名首字母小写-->
-        <property name="typeAliasesPackage" value="crm.wei.lu.settings.pojo" />
+        <property name="typeAliasesPackage" value="wei.lu.crm.settings.pojo" />
 
         <!--批量扫描映射文件-->
         <property name="mapperLocations" value="classpath:mappers/*.xml" />
@@ -48,7 +48,7 @@
         tk.mybatis.spring.mapper.MapperScannerConfigurer:传统和通用mapper
     -->
     <bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="crm.wei.lu.settings.mapper"/>
+        <property name="basePackage" value="wei.lu.crm.settings.mapper"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
 </beans>

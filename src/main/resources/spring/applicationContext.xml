@@ -9,7 +9,7 @@
     <!--
         添加注解扫描器，使所有对象可以被springIOC管理
     -->
-    <context:component-scan base-package="crm"/>
+    <context:component-scan base-package="wei.lu.crm"/>
 
     <!--导入其他spring配置文件信息-->
     <import resource="classpath:spring/spring-service.xml"/>

@@ -6,7 +6,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <!-- 第1步：扫描Controller -->
-    <context:component-scan base-package="crm.wei.lu.settings.controller" />
+    <context:component-scan base-package="wei.lu.crm.settings.controller" />
 
     <!-- 第2步：打开注解驱动,配置处理器映射器和处理器适配器 -->
     <mvc:annotation-driven>
@@ -51,7 +51,7 @@
             <mvc:exclude-mapping path="/jquery/**" />
             <mvc:exclude-mapping path="/image/**" />
             <mvc:exclude-mapping path="/ECharts/**" />
-            <bean class="com.bjpowernode.crm.settings.interceptor.CrmLoginInterceptor" />
+            <bean class="com.bjpowernode.wei.lu.crm.settings.interceptor.CrmLoginInterceptor" />
         </mvc:interceptor>
     </mvc:interceptors>-->
 

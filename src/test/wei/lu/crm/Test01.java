@@ -1,7 +1,7 @@
-package crm;
+package wei.lu.crm;
 
-import crm.wei.lu.settings.mapper.UserMapper;
-import crm.wei.lu.settings.pojo.User;
+import wei.lu.crm.settings.mapper.UserMapper;
+import wei.lu.crm.settings.pojo.User;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.Test;

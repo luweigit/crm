@@ -1,4 +1,4 @@
-package crm.wei.lu.settings.pojo;
+package wei.lu.crm.settings.pojo;
 
 
 import lombok.Data;

@@ -14,7 +14,7 @@
     <aop:config>
 
         <aop:pointcut id="pointcut" expression="execution(*
-        crm.wei.lu..service.*.*(..))" />
+        wei.lu..service.*.*(..))" />
 
         <aop:advisor advice-ref="trAdvice" pointcut-ref="pointcut" />
     </aop:config>
